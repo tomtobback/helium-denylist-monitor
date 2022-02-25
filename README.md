@@ -16,7 +16,7 @@ The Helium team processes the Addition/Removal issues in batches, and has been r
 Status on 25 Feb 2022 (as in above bar graph)
 
 |hash|date|size|new|old|removed|name|
-|:---|:---|---:|---:|---:|---:|:---|
+|:---|:-----------|---:|---:|---:|---:|:---|
 | b52ad8e | 2022-01-20 | 1 | 0 | 0 | 0 | initial README |
 | 8ec9385 | 2022-01-24 | 1 | 0 | 0 | 0 | Initial Instructions for maintainers/signers (#3) |
 | 69b8e1c | 2022-01-28 | 25,047 | 25,047 | 0 | 1 | 2022012601 (#21) |
