@@ -106,16 +106,19 @@ for denylist_count in denylist_counts_list:
     denylist_count['name'], "|")
 plt.grid(axis='y', alpha=0.3, linestyle='dashed')
 # add bars
-plt.bar(dates, olds, color='darkblue')
-plt.bar(dates, news, bottom=olds, color='royalblue') # stacked
-plt.bar(dates, removeds, color='violet') # negative
+plt.bar(dates, olds, color='darkblue', width= 0.5)
+plt.bar(dates, news, bottom=olds, color='royalblue', width = 0.5) # stacked
+plt.bar(dates, removeds, color='violet', width = 0.5) # negative
 plt.xlabel("commit dates")
 plt.ylabel("hotspot counts")
+plt.gca().set_xticklabels(dates, rotation = 30)
+#plt.gca().set_xticklabels(dates)
 # format y label with 1,000 separator
 y_values = plt.gca().get_yticks()
 plt.gca().set_yticklabels(['{:,.0f}'.format(y) for y in y_values])
 plt.title("Helium denylist github commits")
 plt.legend(labels=["Previous", "Additions", "Removals"])
+
 # print size labels on top of bars
 # look for max size to set the ylim with margin for size labels
 max_size = 0
