@@ -6,7 +6,7 @@ Location spoofing has been a problem for the Helium network from the start. Scam
 
 ## Monitoring the denylist
 
-![](20220426_Helium_denylist_github_commits.png)
+![](20220524_Helium_denylist_github_commits.png)
 The Helium team processes the Addition/Removal issues in batches, and has been releasing new denylists every week or so. This [script](monitor_denylist.py) tracks the changes by cloning the github repository, and loading the different versions of the denylist to compare with the previous version.
 
 * Previous: hotspots already included in the previous denylist
@@ -43,6 +43,11 @@ Status on 24 March 2022 (as in above bar graph)
 | 6517634 | 2022-04-18 | 20898 | 1743 | 19155 | 0 | 2022041801 (#3847) |
 | 84e0f9a | 2022-04-20 | 23969 | 3072 | 20897 | 1 | 2022041901 (#4048) |
 | 73ed6f6 | 2022-04-22 | 24324 | 367 | 23957 | 12 | 2022042201 (#4175) |
+| 5b84dc0 | 2022-04-27 | 24315 | 0 | 24315 | 9 | 2022042301 (#4238) |
+| 4d7e05c | 2022-05-05 | 24613 | 334 | 24279 | 36 | 2022050501 (#4381) |
+| fb77695 | 2022-05-07 | 24925 | 312 | 24613 | 0 | 2022050701 (#4734) |
+| ded92a3 | 2022-05-11 | 25768 | 844 | 24924 | 1 | 2022050802 (#4814) |
+| 42ce863 | 2022-05-12 | 25751 | 0 | 25751 | 17 | 2022051101 (#4936) |
 
 ## Installation
 To use this script, you will have to clone the Helium [denylist](https://github.com/helium/denylist) repo, and point the `GIT_DIR` variable in the script to your denylist folder.
