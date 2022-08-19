@@ -2,18 +2,18 @@
 
 ## Background
 
-Location spoofing has been a problem for the Helium network from the start. Scammers are tricking the Proof-of-Coverage algorithm and earning big rewards for their hotspots while everyone knows what’s going on. Helium’s (temporary?) solution, launched in January 2022, is a [denylist](https://github.com/helium/denylist) with known fake hotspots, relying on the public to request Additions or Removals to the list. The list was growing rapidly, and included up to 7% of [all Helium hotspots](https://explorer.helium.com/) at the end of Feb 2022. Then on 9 March 2022 over 90% were taken off the denylist, with [this explanation](https://github.com/helium/denylist/pull/2225). For what it's worth, that's very soon after the Series D funding was announced on 19 Feb 2022. The list has been growing fast, with over 2,000 [open issues](https://github.com/helium/denylist/issues).
+Location spoofing has been a problem for the Helium network from the start. Scammers are tricking the Proof-of-Coverage algorithm and earning big rewards for their hotspots while everyone knows what’s going on. Helium’s (temporary?) solution, launched in January 2022, is a [denylist](https://github.com/helium/denylist) with known fake hotspots, relying on the public to request Additions or Removals to the list. The list was growing rapidly, and included up to 7% of [all Helium hotspots](https://explorer.helium.com/) at the end of Feb 2022. Then on 9 March 2022 over 90% were taken off the denylist, with [this explanation](https://github.com/helium/denylist/pull/2225). For what it's worth, that's very soon after the Series D funding was announced on 19 Feb 2022. The list has been growing fast, with over 2,500 [open issues](https://github.com/helium/denylist/issues). Currently mid August 2022, again 7% of all reported Helium hotspots are on the denylist.
 
 ## Monitoring the denylist
 
-![](20220524_Helium_denylist_github_commits.png)
+![](20220819_Helium_denylist_github_commits.png)
 The Helium team processes the Addition/Removal issues in batches, and has been releasing new denylists every week or so. This [script](monitor_denylist.py) tracks the changes by cloning the github repository, and loading the different versions of the denylist to compare with the previous version.
 
 * Previous: hotspots already included in the previous denylist
 * Additions: hotspots newly added (relative to the previous denylist) 
 * Removals: hotspots removed from the previous denylist (so few that the don't show up yet on the bar graph)
 
-Status on 24 March 2022 (as in above bar graph)
+Status on 19 Aug 2022 (as in above bar graph)
 
 |hash|date|size|new|old|removed|name|
 |:---|:-----------|---:|---:|---:|---:|:---|
@@ -48,6 +48,22 @@ Status on 24 March 2022 (as in above bar graph)
 | fb77695 | 2022-05-07 | 24925 | 312 | 24613 | 0 | 2022050701 (#4734) |
 | ded92a3 | 2022-05-11 | 25768 | 844 | 24924 | 1 | 2022050802 (#4814) |
 | 42ce863 | 2022-05-12 | 25751 | 0 | 25751 | 17 | 2022051101 (#4936) |
+| aca3075 | 2022-05-24 | 27042 | 1292 | 25750 | 1 | 2022051701 (#5071) |
+| 65d3f91 | 2022-05-25 | 31029 | 3997 | 27032 | 10 | 2022052502 (#5329) |
+| 18d37f9 | 2022-06-09 | 32140 | 1123 | 31017 | 12 | 2022060701 (#5411) |
+| 487b9e0 | 2022-06-17 | 32722 | 577 | 32145 | -5 | 2022061701 (#5937) |
+| 992ff26 | 2022-06-24 | 35452 | 2749 | 32703 | 19 | 2022062301 (#5982) |
+| a8c487d | 2022-06-25 | 36869 | 1447 | 35422 | 30 | 2022062401 (#6020) |
+| ca60361 | 2022-06-28 | 40453 | 3602 | 36851 | 18 | 2022062702 (#6105) |
+| 83e1049 | 2022-07-08 | 46721 | 6274 | 40447 | 6 | 2022070701 (#6369) |
+| 49c7331 | 2022-07-12 | 53326 | 6612 | 46714 | 7 | 2022071002 (#6532) |
+| 24ee479 | 2022-07-18 | 54985 | 1709 | 53276 | 50 | 2022071501 (#6629) |
+| c3c4df4 | 2022-07-26 | 56109 | 1124 | 54985 | 0 | 2022072002 (#6902) |
+| 43b00f2 | 2022-07-29 | 58068 | 1959 | 56109 | 0 | 2022072601 (#7030) |
+| ea29736 | 2022-08-15 | 61633 | 3565 | 58068 | 0 | 2022081501 (#7251) |
+| 9c6b063 | 2022-08-15 | 58841 | 0 | 58841 | 2792 | 2022072902 (#7082) |
+| b8fbd89 | 2022-08-18 | 64496 | 5670 | 58826 | 15 | 2022081601 (#7254) |
+
 
 ## Installation
 To use this script, you will have to clone the Helium [denylist](https://github.com/helium/denylist) repo, and point the `GIT_DIR` variable in the script to your denylist folder.
