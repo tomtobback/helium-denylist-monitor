@@ -2,18 +2,22 @@
 
 ## Background
 
-Location spoofing has been a problem for the Helium network from the start. Scammers are tricking the Proof-of-Coverage algorithm and earning big rewards for their hotspots while everyone knows what’s going on. Helium’s (temporary?) solution, launched in January 2022, is a [denylist](https://github.com/helium/denylist) with known fake hotspots, relying on the public to request Additions or Removals to the list. The list was growing rapidly, and included up to 7% of [all Helium hotspots](https://explorer.helium.com/) at the end of Feb 2022. Then on 9 March 2022 over 90% were taken off the denylist, with [this explanation](https://github.com/helium/denylist/pull/2225). For what it's worth, that's very soon after the Series D funding was announced on 19 Feb 2022. The list has been growing fast, with over 2,500 [open issues](https://github.com/helium/denylist/issues). Currently mid August 2022, again 7% of all reported Helium hotspots are on the denylist.
+Location spoofing has been a problem for the Helium network from the start. Scammers are tricking the Proof-of-Coverage algorithm and earning big rewards for their hotspots while everyone knows what’s going on. Helium’s (temporary?) solution, launched in January 2022, is a [denylist](https://github.com/helium/denylist) with known fake hotspots, relying on the public to request Additions or Removals to the list. The list was growing rapidly, and included up to 7% of [all Helium hotspots](https://explorer.helium.com/) at the end of Feb 2022. Then on 9 March 2022 over 90% were taken off the denylist, with [this explanation](https://github.com/helium/denylist/pull/2225). For what it's worth, that's very soon after the Series D funding was announced on 19 Feb 2022. The list continues to grow, with over 2,200 [open issues](https://github.com/helium/denylist/issues). At the end of Oct 2022, Nova Labs announced it will no longer handle the github issues; requests for additions and removals will now be handled as 'submissions' via [Crowdspot.io](https://www.crowdspot.io/).
+
+Early Nov 2022, there are over 118,000 hotspots on the denylist, which is over 12% of all Helium hotspots.
 
 ## Monitoring the denylist
 
-![](20220819_Helium_denylist_github_commits.png)
-The Helium team processes the Addition/Removal issues in batches, and has been releasing new denylists every week or so. This [script](monitor_denylist.py) tracks the changes by cloning the github repository, and loading the different versions of the denylist to compare with the previous version.
+![](20221103_Helium_denylist_github_commits.png)
+The Helium/Nova Labs team was processing the github Addition/Removal issues in batches, releasing new denylists every week or so. Since 27 Oct 2022 the submissions are at [Crowdspot.io](https://www.crowdspot.io/submissions). It remains to be seen if the community will use this platform, and how Nova Labs will keep up with submissions. On 3 Nov 2022, 5 out of 197 submissions have been 'accepted', and are waiting to be [merged](https://github.com/helium/denylist/pull/8256).
+
+This [script](monitor_denylist.py) tracks the changes to the denylist by cloning the github repository, and loading the different versions of the denylist to compare with the previous version.
 
 * Previous: hotspots already included in the previous denylist
 * Additions: hotspots newly added (relative to the previous denylist) 
 * Removals: hotspots removed from the previous denylist (so few that the don't show up yet on the bar graph)
 
-Status on 19 Aug 2022 (as in above bar graph)
+Status on 3 Nov 2022 (as in above bar graph)
 
 |hash|date|size|new|old|removed|name|
 |:---|:-----------|---:|---:|---:|---:|:---|
@@ -63,7 +67,30 @@ Status on 19 Aug 2022 (as in above bar graph)
 | ea29736 | 2022-08-15 | 61633 | 3565 | 58068 | 0 | 2022081501 (#7251) |
 | 9c6b063 | 2022-08-15 | 58841 | 0 | 58841 | 2792 | 2022072902 (#7082) |
 | b8fbd89 | 2022-08-18 | 64496 | 5670 | 58826 | 15 | 2022081601 (#7254) |
+| f21eb18 | 2022-08-23 | 67802 | 3306 | 64496 | 0 | 2022081802 (#7285) |
+| 3b9fdb2 | 2022-08-25 | 69520 | 1718 | 67802 | 0 | 2022082301 (#7345) |
+| da8b7be | 2022-08-28 | 72358 | 2838 | 69520 | 0 | 2022082501 (#7383) |
+| 5b8ea24 | 2022-08-31 | 73936 | 1580 | 72356 | 2 | 2022082801 (#7422) |
+| e3785d5 | 2022-09-08 | 76484 | 2548 | 73936 | 0 | 2022090101 (#7534) |
+| 464fe37 | 2022-09-13 | 79645 | 3162 | 76483 | 1 | 2022090802 (#7606) |
+| f85ae7c | 2022-09-19 | 82416 | 2771 | 79645 | 0 | 2022091301 (#7650) |
+| 75d57af | 2022-09-24 | 87204 | 4789 | 82415 | 1 | 2022092001 (#7705) |
+| b8050ce | 2022-09-29 | 88628 | 1498 | 87130 | 74 | 2022092501 (#7799) |
+| c31fc6a | 2022-10-03 | 95273 | 6645 | 88628 | 0 | 2022092901 (#7857) |
+| 77c9b3c | 2022-10-06 | 98717 | 3444 | 95273 | 0 | 2022100301 (#7919) |
+| a2732cf | 2022-10-10 | 105707 | 7047 | 98660 | 57 | 2022100701 (#7946) |
+| ad2e0af | 2022-10-12 | 106838 | 1131 | 105707 | 0 | 2022101001 (#8022) |
+| 65efc13 | 2022-10-14 | 108261 | 1423 | 106838 | 0 | 2022101301 (#8045) |
+| afd8e39 | 2022-10-18 | 109268 | 1010 | 108258 | 3 | 2022101401 (#8087) |
+| 729e271 | 2022-10-20 | 111639 | 2372 | 109267 | 1 | 2022101801 (#8143) |
+| 69a1ec9 | 2022-10-24 | 113791 | 2154 | 111637 | 2 | 2022102001 (#8169) |
+| 894f0ae | 2022-10-26 | 116747 | 2964 | 113783 | 8 | 2022102401 (#8196) |
+| 3cee0dc | 2022-10-28 | 117812 | 1096 | 116716 | 31 | 2022102601 (#8217) |
+| 6eef7f2 | 2022-10-31 | 118818 | 1012 | 117806 | 6 | 2022102801 (#8254) |
 
+[Crowdspot.io](https://www.crowdspot.io/) has an interesting list with top locations on the denylist.
+
+![](20221103crowdspot-locations.png)
 
 ## Installation
 To use this script, you will have to clone the Helium [denylist](https://github.com/helium/denylist) repo, and point the `GIT_DIR` variable in the script to your denylist folder.
